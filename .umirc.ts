@@ -12,6 +12,10 @@ export default defineConfig({
   request: {},
   locale: {
     default: 'en-US',
+    antd: true, // Enable Ant Design localization
+    baseNavigator: true, // Use the browser's language settings
+    baseSeparator: '-', // Locale code separator
+    useLocalStorage: true, // Save locale to localStorage
   },
   layout: {},
   routes: [
@@ -35,21 +39,21 @@ export default defineConfig({
       path: '/elderly/:id',
       component: './ElderlyProfile',
       access: 'isStaff',
-      hideInMenu: true,
+      layout: true,
     },
     {
       name: 'Register Visit',
       path: '/register-visit/:id',
       component: './RegisterVisit',
       access: ['isVolunteer', 'isStaff'],
-      hideInMenu: true,
+      layout: true,
     },
     {
       name: 'Display Visits',
       path: '/display-visits',
       component: './DisplayVisits',
       access: ['isVolunteer', 'isStaff'],
-      hideInMenu: true,
+      layout: true,
     },
     {
       name: 'Visit Detail',
