@@ -21,10 +21,13 @@ export default defineConfig({
   routes: [
     {
       path: '/',
-      redirect: '/home',
+      name: 'menu.LinkTree',
+      component: './LinkTree',
+      layout: true,
+      access: ['isVolunteer', 'isStaff'],
     },
     {
-      name: 'Login',
+      name: 'menu.Login',
       path: '/login',
       component: './Login',
       layout: false,
@@ -38,18 +41,19 @@ export default defineConfig({
     {
       path: '/elderly/:id',
       component: './ElderlyProfile',
+      name: 'menu.ElderlyProfile',
       access: 'isStaff',
       layout: true,
     },
     {
-      name: 'Register Visit',
+      name: 'menu.RegisterVisit',
       path: '/register-visit/:id',
       component: './RegisterVisit',
       access: ['isVolunteer', 'isStaff'],
       layout: true,
     },
     {
-      name: 'Display Visits',
+      name: 'menu.DisplayVisits',
       path: '/display-visits',
       component: './DisplayVisits',
       access: ['isVolunteer', 'isStaff'],
