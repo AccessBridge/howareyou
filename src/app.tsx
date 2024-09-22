@@ -36,7 +36,7 @@ export const layout: RunTimeLayoutConfig = (initialState) => {
   }
 
   return {
-    title: '',
+    title: 'HowAreYou',
     logo: 'https://img.alicdn.com/tfs/TB1YHEpwUT1gK0jSZFhXXaAtVXa-28-27.svg',
     menu: {
       locale: false,
@@ -53,5 +53,6 @@ export const layout: RunTimeLayoutConfig = (initialState) => {
     },
     menuRender: false,
     headerRender: () => <CustomNavbar />,
+    pageTitleRender: false,
   };
 };
