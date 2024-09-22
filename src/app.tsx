@@ -1,6 +1,8 @@
 import { RunTimeLayoutConfig } from '@umijs/max';
+import React from 'react';
 import { history } from 'umi';
-import './global.css'
+import CustomNavbar from './components/CustomNavbar';
+import './global.css';
 
 type UserRole = 'volunteer' | 'staff';
 
@@ -41,14 +43,15 @@ export const layout: RunTimeLayoutConfig = (initialState) => {
     },
     logout: (initialState: any) => {
       localStorage.removeItem('userRole');
-      history.push('/login')
+      history.push('/login');
     },
-    locale: 'en-US',
     token: {
       pageContainer: {
         paddingBlockPageContainerContent: 0,
         paddingInlinePageContainerContent: 0,
       },
     },
+    menuRender: false,
+    headerRender: () => <CustomNavbar />,
   };
 };
